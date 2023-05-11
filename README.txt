@@ -23,4 +23,4 @@ in replay mode, use J to reverse, K to pause, L to go forward. When paused, you 
 in steps.
 
 --- github Repo ---
-https://github.com/rkovac14/ija2
+https://github.com/rkovac14/fitman-revamped
