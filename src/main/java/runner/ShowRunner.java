@@ -74,7 +74,7 @@ public class ShowRunner {
         numberOfGhosts = maze.ghosts().size();
 
         if(play == 1){
-            new Logger(System.getProperty("user.dir") + "logs/log.txt");
+            new Logger(System.getProperty("user.dir") + "\\logs\\log.txt");
             Logger.writeMap(maze);
         }else{
             new LogReader(Objects.requireNonNullElse(selectedFilePath, System.getProperty("user.dir") + "/logs/log.txt"));
