@@ -3,6 +3,7 @@ package runner;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
@@ -13,13 +14,13 @@ import java.util.concurrent.*;
 import common.*;
 import game.*;
 import game.Frame;
-import view.*;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+
 public class ShowRunner {
     static int round = 0;
     public static boolean time = true;
@@ -48,23 +49,23 @@ public class ShowRunner {
      * Main method
      */
     public static void main(String[] args){
-        new ShowRunner();
+        ShowRunner.Run();
     }
 
-    public ShowRunner() {
+    public static void Run() {
         String selectedFilePath = menuWindow();
+
+        if (selectedFilePath == null)
+            System.exit(0);
+
         MapReader reader;
 
-        System.out.println(System.getProperty("user.dir") + "\\logs\\log.txt");
-
-        if(!(new File(System.getProperty("user.dir") + "\\logs")).exists())
-            //Create directory for logs
-            (new File(System.getProperty("user.dir") + "\\logs")).mkdir();
+        (new File(System.getProperty("user.dir") + "\\logs")).mkdir();
 
         if(play == 1){
-            reader = new MapReader(Objects.requireNonNullElse(selectedFilePath, "\\data\\map.txt"));
+            reader = new MapReader(selectedFilePath);
         }else{
-            reader = new MapReader(Objects.requireNonNullElse(selectedFilePath, "\\data\\log.txt"));
+            reader = new MapReader(selectedFilePath);
         }
 
         MazeConfigure cfg = new MazeConfigure();
@@ -74,21 +75,22 @@ public class ShowRunner {
         numberOfGhosts = maze.ghosts().size();
 
         if(play == 1){
+            //TODO Maroš pls fix dis
             new Logger(System.getProperty("user.dir") + "\\logs\\log.txt");
             Logger.writeMap(maze);
         }else{
-            new LogReader(Objects.requireNonNullElse(selectedFilePath, System.getProperty("user.dir") + "\\logs\\log.txt"));
+            //TODO Maroš pls fix dis
+            new LogReader(selectedFilePath);
             LogReader.readLogFile(numberOfGhosts);
         }
 
         /*
           Periodically check for new movement from user and update ghosts
          */
+        ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
         if(play == 1){
-            ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
             executor.scheduleAtFixedRate(movement, 1000, 400, TimeUnit.MILLISECONDS);
         } else {
-            ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
             executor.scheduleAtFixedRate(replay, 1000, 500, TimeUnit.MILLISECONDS);
         }
 
@@ -263,7 +265,6 @@ public class ShowRunner {
         animationSwitch = !animationSwitch;
         //ghost movement
         for(CommonMazeObject ghost : maze.ghosts()){
-            Thread firstThread = new Thread(() -> {
                 try {
                     ((PacmanObject)ghost).calculateDirection((PathField) maze.getPacman().getField());
                     CommonField.Direction dir = ghost.move(null);
@@ -277,30 +278,13 @@ public class ShowRunner {
                     }
                     System.exit(0);
                 }
-            });
 
-            firstThread.start();
-
-            try {
-                firstThread.join();
-            } catch (InterruptedException e) {
-                System.out.println("Ghost movement execution error");
-            }
         }
         //pacman movement
-        Thread secondThread = new Thread(() -> {
             CommonField.Direction dir =  maze.getPacman().move(null);
             Logger.write("Pacman moving ");
             Logger.writeDirection(dir);
             Logger.write("Round End\n");
-        });
-
-        secondThread.start();
-        try {
-            secondThread.join();
-        } catch (InterruptedException e) {
-            System.out.println("PacMan movement execution error");
-        }
 
 
         if (won){

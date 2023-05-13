@@ -5,7 +5,7 @@ import java.util.List;
 
 import common.*;
 import game.*;
-import view.*;
+
 /**
  * Holds the map (maze)
  */

@@ -1,0 +1,253 @@
+12 13
+G.X...T...X.G
+....XXXXX....
+.XX.......XX.
+....X...X....
+............K
+.XXXX...XXXX.
+.............
+....X...X....
+.XX.X...X.XX.
+.............
+....XXXXX....
+..X...S...X..
+Round Start
+Ghost moving R
+Ghost moving L
+Pacman moving 
+Round End
+Round Start
+Ghost moving D
+Ghost moving D
+Pacman moving 
+Round End
+Round Start
+Ghost moving R
+Ghost moving L
+Pacman moving 
+Round End
+Round Start
+Ghost moving R
+Ghost moving L
+Pacman moving R
+Round End
+Round Start
+Ghost moving D
+Ghost moving D
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving L
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving 
+Round End
+Round Start
+Ghost moving R
+Ghost moving D
+Pacman moving 
+Round End
+Round Start
+Ghost moving R
+Ghost moving D
+Pacman moving L
+Round End
+Round Start
+Ghost moving R
+Ghost moving L
+Pacman moving L
+Round End
+Round Start
+Ghost moving L
+Ghost moving L
+Pacman moving L
+Round End
+Round Start
+Ghost moving L
+Ghost moving L
+Pacman moving L
+Round End
+Round Start
+Ghost moving L
+Ghost moving L
+Pacman moving L
+Round End
+Round Start
+Ghost moving L
+Ghost moving L
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving L
+Round End
+Round Start
+Ghost moving U
+Ghost moving U
+Pacman moving L
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving L
+Round End
+Round Start
+Ghost moving L
+Ghost moving D
+Pacman moving L
+Round End
+Round Start
+Ghost moving D
+Ghost moving L
+Pacman moving L
+Round End
+Round Start
+Ghost moving L
+Ghost moving L
+Pacman moving L
+Round End
+Round Start
+Ghost moving L
+Ghost moving L
+Pacman moving R
+Round End
+Round Start
+Ghost moving L
+Ghost moving L
+Pacman moving R
+Round End
+Round Start
+Ghost moving L
+Ghost moving L
+Pacman moving R
+Round End
+Round Start
+Ghost moving D
+Ghost moving D
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving R
+Round End
+Round Start
+Ghost moving D
+Ghost moving D
+Pacman moving L
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving L
+Round End
+Round Start
+Ghost moving L
+Ghost moving L
+Pacman moving L
+Round End
+Round Start
+Ghost moving L
+Ghost moving L
+Pacman moving L
+Round End
+Round Start
+Ghost moving L
+Ghost moving L
+Pacman moving L
+Round End
+Round Start
+Ghost moving L
+Ghost moving L
+Pacman moving L
+Round End
+Round Start
+Ghost moving L
+Ghost moving L
+Pacman moving 
+Round End
+Round Start
+Ghost moving R
+Ghost moving D
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving D
+Pacman moving R
+Round End
+Round Start
+Ghost moving D
+Ghost moving D
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving R
+Round End
+Round Start
+Ghost moving D
+Ghost moving R
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving U
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving R
+Round End
+Round Start
+Ghost moving R
+Ghost moving R
+Pacman moving U
+Round End

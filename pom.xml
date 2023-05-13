@@ -6,7 +6,8 @@
 
     <groupId>org.ija</groupId>
     <artifactId>fitman</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-FINAL</version>
+
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -16,8 +17,11 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.5.0</version>
                 <configuration>
+                    <outputDirectory>${project.basedir}</outputDirectory>
                     <archive>
                         <manifest>
                             <mainClass>runner.ShowRunner</mainClass>
@@ -26,8 +30,26 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-                    <finalName>FITMAN</finalName>
+                    <finalName>FitMan</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <reportOutputDirectory>${project.basedir}</reportOutputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>aggregate</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

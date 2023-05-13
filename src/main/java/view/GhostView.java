@@ -1,7 +1,6 @@
 package view;
 
 import common.*;
-import game.*;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

@@ -3,8 +3,8 @@ package game;
 import java.util.concurrent.ThreadLocalRandom;
 import common.*;
 import game.*;
-import view.*;
 import runner.ShowRunner;
+
 
 /**
  * Holds the field in which pacman currently is
@@ -91,6 +91,7 @@ public class PacmanObject implements MazeObject {
         }
         System.exit(0);
     }
+
     @Override
     public boolean isPacman() {
         return this.isPacman;

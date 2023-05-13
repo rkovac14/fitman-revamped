@@ -2,7 +2,6 @@ package game;
 
 import common.*;
 import game.*;
-import view.*;
 
 import java.util.ArrayList;
 import java.util.List;

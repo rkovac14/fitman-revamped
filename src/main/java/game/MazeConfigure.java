@@ -2,7 +2,6 @@ package game;
 
 import common.*;
 import game.*;
-import view.*;
 
 public class MazeConfigure {
     private int cols = 0; //Map columns variable

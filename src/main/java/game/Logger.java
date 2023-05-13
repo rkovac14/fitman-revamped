@@ -2,8 +2,6 @@ package game;
 
 import common.*;
 import game.*;
-import view.*;
-import runner.ShowRunner;
 
 import java.io.File;
 import java.io.FileWriter;

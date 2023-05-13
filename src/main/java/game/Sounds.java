@@ -1,17 +1,11 @@
 package game;
 import javax.sound.sampled.*;
 import java.io.BufferedInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import javax.sound.sampled.LineEvent.Type;
 public class Sounds {
-    //private static final File pacSound = new File("src/main/resources/sounds/chomp.wav");
-    private static final InputStream pacSound = Sounds.class.getResourceAsStream("/sounds/chomp.wav");
-    private static final InputStream menuSound = Sounds.class.getResourceAsStream("/sounds/beginning.wav");
-    private static final InputStream keySound = Sounds.class.getResourceAsStream("/sounds/eatfruit.wav");
-    private static final InputStream endSound = Sounds.class.getResourceAsStream("/sounds/intermission.wav");
-    private static final InputStream deathSound = Sounds.class.getResourceAsStream("/sounds/death.wav");
+    BufferedInputStream temp = (BufferedInputStream) Sounds.class.getResourceAsStream("/sounds/chomp.wav");
     static final int PACSOUND = 1;
     static final int MENUSOUND = 2;
     static final int ENDSOUND = 3;
@@ -64,38 +58,35 @@ public class Sounds {
         switch (sound) {
             case PACSOUND -> new Thread(() -> {
                 try {
-                    playClip(pacSound);
+                    playClip(Sounds.class.getResourceAsStream("/sounds/chomp.wav"));
                 } catch (Exception e) {
-                    System.out.println(e);
                     System.out.println("Sound playing error !");
                 }
             }).start();
             case MENUSOUND -> new Thread(() -> {
                 try {
-                    playClip(menuSound);
+                    playClip(Sounds.class.getResourceAsStream("/sounds/beginning.wav"));
                 } catch (Exception e) {
-                    System.out.println(e);
                     System.out.println("Sound playing error !");
                 }
             }).start();
             case ENDSOUND -> new Thread(() -> {
                 try {
-                    playClip(endSound);
+                    playClip(Sounds.class.getResourceAsStream("/sounds/intermission.wav"));
                 } catch (Exception e) {
-                    System.out.println(e);
                     System.out.println("Sound playing error !");
                 }
             }).start();
             case KEYSOUND -> new Thread(() -> {
                 try {
-                    playClip(keySound);
+                    playClip(Sounds.class.getResourceAsStream("/sounds/eatfruit.wav"));
                 } catch (Exception e) {
                     System.out.println("Sound playing error !");
                 }
             }).start();
             case DEATHSOUND -> new Thread(() -> {
                 try {
-                    playClip(deathSound);
+                    playClip(Sounds.class.getResourceAsStream("/sounds/death.wav"));
                 } catch (Exception e) {
                     System.out.println("Sound playing error !");
                 }

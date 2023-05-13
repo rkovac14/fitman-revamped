@@ -2,7 +2,6 @@ package game;
 
 import common.*;
 import game.*;
-import view.*;
 
 import java.io.File;
 import java.io.IOException;
