@@ -55,16 +55,16 @@ public class ShowRunner {
         String selectedFilePath = menuWindow();
         MapReader reader;
 
-        System.out.println(System.getProperty("user.dir") + "/logs/log.txt");
+        System.out.println(System.getProperty("user.dir") + "\\logs\\log.txt");
 
-        if(!(new File(System.getProperty("user.dir") + "/logs/log.txt")).exists())
+        if(!(new File(System.getProperty("user.dir") + "\\logs")).exists())
             //Create directory for logs
-            (new File(System.getProperty("user.dir") + "/logs/log.txt")).mkdir();
+            (new File(System.getProperty("user.dir") + "\\logs")).mkdir();
 
         if(play == 1){
-            reader = new MapReader(Objects.requireNonNullElse(selectedFilePath, "/data/map.txt"));
+            reader = new MapReader(Objects.requireNonNullElse(selectedFilePath, "\\data\\map.txt"));
         }else{
-            reader = new MapReader(Objects.requireNonNullElse(selectedFilePath, "/data/log.txt"));
+            reader = new MapReader(Objects.requireNonNullElse(selectedFilePath, "\\data\\log.txt"));
         }
 
         MazeConfigure cfg = new MazeConfigure();
@@ -77,7 +77,7 @@ public class ShowRunner {
             new Logger(System.getProperty("user.dir") + "\\logs\\log.txt");
             Logger.writeMap(maze);
         }else{
-            new LogReader(Objects.requireNonNullElse(selectedFilePath, System.getProperty("user.dir") + "/logs/log.txt"));
+            new LogReader(Objects.requireNonNullElse(selectedFilePath, System.getProperty("user.dir") + "\\logs\\log.txt"));
             LogReader.readLogFile(numberOfGhosts);
         }
 
