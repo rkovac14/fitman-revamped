@@ -248,6 +248,7 @@ public class ShowRunner {
             PacmanObject pacman = ((PacmanObject) maze.getPacman());
             String direction = LogReader.pacmanMovements.get(round);
             pacman.changeDirection(LogReader.reverseDirectionParser(direction));
+            animationSwitch = !animationSwitch;
             pacman.move(null);
 
             if(!LogReader.keyRounds.isEmpty() && LogReader.keyRounds.get(0) == round){
@@ -283,6 +284,11 @@ public class ShowRunner {
             Logger.writeDirection(dir);
             Logger.write("Round End\n");
 
+        try{
+            Logger.logFile.flush();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
 
         if (won){
             Sounds.playSound(ENDSOUND);
@@ -291,13 +297,9 @@ public class ShowRunner {
             } catch (InterruptedException ignored) {
             }
             System.exit(0);
-        }else
+        }else {
             Sounds.playSound(PACSOUND);
-
-        try{
-            Logger.logFile.flush();
-        } catch (IOException e){
-            e.printStackTrace();
         }
+
     };
 }
