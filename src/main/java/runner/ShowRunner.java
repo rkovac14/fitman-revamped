@@ -3,7 +3,6 @@ package runner;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
@@ -75,12 +74,10 @@ public class ShowRunner {
         numberOfGhosts = maze.ghosts().size();
 
         if(play == 1){
-            //TODO Maroš pls fix dis
-            new Logger(System.getProperty("user.dir") + "\\logs\\log.txt");
+            Logger.initLogger(System.getProperty("user.dir") + "\\logs\\log.txt");
             Logger.writeMap(maze);
         }else{
-            //TODO Maroš pls fix dis
-            new LogReader(selectedFilePath);
+            LogReader.initLogReader(selectedFilePath);
             LogReader.readLogFile(numberOfGhosts);
         }
 

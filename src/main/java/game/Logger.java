@@ -1,14 +1,13 @@
 package game;
 
 import common.*;
-import game.*;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 public class Logger {
     public static FileWriter logFile;
-    public Logger(String filename){
+    public static void initLogger(String filename){
         File file = new File(filename);
         try {
             logFile = new FileWriter(file);

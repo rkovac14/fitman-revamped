@@ -1,7 +1,6 @@
 package game;
 
 import common.*;
-import game.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +15,7 @@ public class LogReader {
     public static final List<Integer> keyRounds = new ArrayList<>();
     public static final List<Integer> keyRow = new ArrayList<>();
     public static final List<Integer> keyCol = new ArrayList<>();
-    public LogReader(String filename){
+    public static void initLogReader(String filename){
         try {
             LogReader.reader = new Scanner(new File(filename));
         } catch (IOException e){
