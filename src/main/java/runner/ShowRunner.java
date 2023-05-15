@@ -282,8 +282,8 @@ public class ShowRunner {
         }
         //pacman movement
             CommonField.Direction dir =  maze.getPacman().move(null);
-            pacmanSteps++;
-            System.out.println("Pacman has stepped " + pacmanSteps + " times");
+            if (dir!=null)
+                pacmanSteps++;
             if(((PacmanObject)maze.getPacman()).hasKey())
                 ShowRunner.stats.updateWindow("Key found", "Pacman has stepped " + pacmanSteps + " times");
             else

@@ -9,24 +9,24 @@ import java.util.Objects;
 
 public class StatWindow {
     JFrame stats = new JFrame("Stats");
-    JPanel statPanel = new JPanel();
+    JLabel stat1label = new JLabel();
+    JLabel stat2label = new JLabel();
     private static final ImageIcon defaultIcon = new ImageIcon(Objects.requireNonNull(ShowRunner.class.getResource("/textures/icon.png")));
-    String stat1;
-    String stat2;
     public StatWindow (){
         //Configure stats window
         this.stats.setIconImage(defaultIcon.getImage());
-        this.stats.setPreferredSize(new Dimension(300, 100));
+        this.stats.setPreferredSize(new Dimension(300, 150));
         this.stats.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        this.statPanel.setBorder(new EmptyBorder(50, 20, 10, 20));
-        this.statPanel.setLayout(new GridBagLayout());
+        JPanel statPanel = new JPanel();
+        statPanel.setBorder(new EmptyBorder(20, 20, 10, 20));
+        statPanel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.anchor = GridBagConstraints.NORTH;
         gbc.insets = new Insets(5,5,5,5);
-        this.statPanel.add(new JLabel(stat1), gbc);
-        this.statPanel.add(new JLabel(stat2), gbc);
+        statPanel.add(stat1label, gbc);
+        statPanel.add(stat2label, gbc);
         gbc.anchor = GridBagConstraints.CENTER;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         this.stats.add(statPanel);
@@ -35,14 +35,12 @@ public class StatWindow {
     }
 
     public void updateWindow(String st1, String st2){
-        this.stat1 = st1;
-        this.stat2 = st2;
-        System.out.println(this.stat1);
-        System.out.println(this.stat2);
-        this.statPanel.setVisible(false);
-        this.statPanel.invalidate();
-        this.statPanel.validate();
-        this.statPanel.repaint();
-        this.statPanel.setVisible(true);
+        stat1label.setText(st1);
+        stat2label.setText(st2);
+        //this.stats.setVisible(false);
+        this.stats.invalidate();
+        this.stats.validate();
+        this.stats.repaint();
+        //this.stats.setVisible(true);
     }
 }
