@@ -1,7 +1,6 @@
 package game;
 
 import common.*;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

@@ -1,8 +1,11 @@
+/**
+ * WallFiled class file, extension of Filed class
+ * @author Richard Kovac (xkovac55)
+ * @author Maros Sztolarik (xsztol00)
+ */
 package game;
 
 import common.*;
-import game.*;
-
 import java.util.ArrayList;
 import java.util.List;
 

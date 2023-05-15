@@ -1,8 +1,12 @@
+/**
+ * Field rendering
+ * @author Richard Kovac (xkovac55)
+ * @author Maros Sztolarik (xsztol00)
+ */
 package view;
 
 import common.*;
 import game.*;
-
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
@@ -14,7 +18,6 @@ import static runner.ShowRunner.textures;
 public class FieldView extends JPanel implements Observable.Observer {
     private final CommonField field;
     private final List<ComponentView> objects;
-    private int changedField = 0;
     private BufferedImage Texture = null;
 
     /**
@@ -71,7 +74,6 @@ public class FieldView extends JPanel implements Observable.Observer {
     }
 
     public final void update(Observable field) {
-        ++this.changedField;
         this.privateUpdate();
     }
 

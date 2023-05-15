@@ -1,7 +1,10 @@
+/**
+ * Maze configurator
+ * @author Richard Kovac (xkovac55)
+ * @author Maros Sztolarik (xsztol00)
+ */
 package game;
-
 import common.*;
-import game.*;
 
 public class MazeConfigure {
     private int cols = 0; //Map columns variable

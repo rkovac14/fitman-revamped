@@ -1,9 +1,13 @@
+/**
+ * Frame generation
+ * @author Richard Kovac (xkovac55)
+ * @author Maros Sztolarik (xsztol00)
+ */
 package game;
 
 import common.*;
 import view.*;
 import runner.ShowRunner;
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

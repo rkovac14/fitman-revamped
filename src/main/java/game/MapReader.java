@@ -1,3 +1,8 @@
+/**
+ * Map reader
+ * @author Richard Kovac (xkovac55)
+ * @author Maros Sztolarik (xsztol00)
+ */
 package game;
 
 import java.io.BufferedReader;

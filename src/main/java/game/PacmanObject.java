@@ -1,8 +1,11 @@
+/**
+ * Pacman object
+ * @author Richard Kovac (xkovac55)
+ * @author Maros Sztolarik (xsztol00)
+ */
 package game;
-
 import java.util.concurrent.ThreadLocalRandom;
 import common.*;
-import game.*;
 import runner.ShowRunner;
 
 

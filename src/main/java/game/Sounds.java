@@ -1,3 +1,8 @@
+/**
+ * Sound effects
+ * @author Richard Kovac (xkovac55)
+ * @author Maros Sztolarik (xsztol00)
+ */
 package game;
 import javax.sound.sampled.*;
 import java.io.BufferedInputStream;
@@ -5,7 +10,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.sound.sampled.LineEvent.Type;
 public class Sounds {
-    BufferedInputStream temp = (BufferedInputStream) Sounds.class.getResourceAsStream("/sounds/chomp.wav");
     static final int PACSOUND = 1;
     static final int MENUSOUND = 2;
     static final int ENDSOUND = 3;

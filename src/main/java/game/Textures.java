@@ -1,3 +1,8 @@
+/**
+ * Holds textures and loads them into memory
+ * @author Richard Kovac (xkovac55)
+ * @author Maros Sztolarik (xsztol00)
+ */
 package game;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

@@ -3,6 +3,7 @@ package runner;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
@@ -44,6 +45,7 @@ public class ShowRunner {
     static final int MENUSOUND = 2;
     static final int ENDSOUND = 3;
     static final int DEATHSOUND = 5;
+    private static StatWindow stats;
 
     /**
      * Main method
@@ -60,13 +62,10 @@ public class ShowRunner {
 
         MapReader reader;
 
+        //noinspection ResultOfMethodCallIgnored
         (new File(System.getProperty("user.dir") + "\\logs")).mkdir();
 
-        if(play == 1){
-            reader = new MapReader(selectedFilePath);
-        }else{
-            reader = new MapReader(selectedFilePath);
-        }
+        reader = new MapReader(selectedFilePath);
 
         MazeConfigure cfg = new MazeConfigure();
         reader.ReadMap(cfg);
@@ -82,6 +81,8 @@ public class ShowRunner {
             LogReader.readLogFile(numberOfGhosts);
         }
 
+        //Initialize stats window
+        ShowRunner.stats = new StatWindow();
         /*
           Periodically check for new movement from user and update ghosts
          */
@@ -284,9 +285,9 @@ public class ShowRunner {
             pacmanSteps++;
             System.out.println("Pacman has stepped " + pacmanSteps + " times");
             if(((PacmanObject)maze.getPacman()).hasKey())
-                System.out.println("Pacman got the key");
+                ShowRunner.stats.updateWindow("Key found", "Pacman has stepped " + pacmanSteps + " times");
             else
-                System.out.println("Key not found yet");
+                ShowRunner.stats.updateWindow("Key not found", "Pacman has stepped " + pacmanSteps + " times");
             Logger.write("Pacman moving ");
             Logger.writeDirection(dir);
             Logger.write("Round End\n");

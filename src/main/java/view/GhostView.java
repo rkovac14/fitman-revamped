@@ -1,7 +1,11 @@
+/**
+ * Ghost component file
+ * @author Richard Kovac (xkovac55)
+ * @author Maros Sztolarik (xsztol00)
+ */
 package view;
 
 import common.*;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 

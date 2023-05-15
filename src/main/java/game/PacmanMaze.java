@@ -1,10 +1,12 @@
+/**
+ * Map (maze) class
+ * @author Richard Kovac (xkovac55)
+ * @author Maros Sztolarik (xsztol00)
+ */
 package game;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import common.*;
-import game.*;
 
 /**
  * Holds the map (maze)
