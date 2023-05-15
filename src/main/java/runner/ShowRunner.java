@@ -31,6 +31,7 @@ public class ShowRunner {
     public static int play = 0;
     private static PacmanMaze maze;
     private static int numberOfGhosts;
+    private static int pacmanSteps = 0;
 
     /**
      * Files with needed graphics
@@ -280,6 +281,12 @@ public class ShowRunner {
         }
         //pacman movement
             CommonField.Direction dir =  maze.getPacman().move(null);
+            pacmanSteps++;
+            System.out.println("Pacman has stepped " + pacmanSteps + " times");
+            if(((PacmanObject)maze.getPacman()).hasKey())
+                System.out.println("Pacman got the key");
+            else
+                System.out.println("Key not found yet");
             Logger.write("Pacman moving ");
             Logger.writeDirection(dir);
             Logger.write("Round End\n");

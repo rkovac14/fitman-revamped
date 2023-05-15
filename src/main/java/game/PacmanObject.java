@@ -99,6 +99,10 @@ public class PacmanObject implements MazeObject {
     public void setPacman(boolean isPacman) {
         this.isPacman = isPacman;
     }
+
+    public boolean hasKey(){
+        return this.hasKey;
+    }
     public void changeDirection(CommonField.Direction dir){
         this.direction = dir;
     }
